@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<!-- Target BankAccount bean -->
+<bean id="bankAccount" class="com.nit.beans.BankAccount" depends-on="panDetails">
+   <constructor-arg name="name" value="Saikumar-apa"/>
+   <constructor-arg name="aadharNo" value="123723723"/>
+   <constructor-arg name="mobileNo" value="12345678999"/>
+   <!-- <constructor-arg name="panDetails" ref="panDetails"/> -->
+</bean>
+
+
+<!-- dependent PanDetails bean -->
+<bean id="panDetails" class="com.nit.beans.PanDetails">
+   <property name="panId" value="101"/>
+   <property name="state" value="INDIA"/>
+</bean>
+
+
+
+
+</beans>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<!-- Method Replacer Beans -->
+
+  <bean id="methodRelacerclass"
+		class="com.dt.beans.ReportGeneratorReplacer"></bean>
+		
+  <bean id="m1_methodReplacer" 
+		   class="com.dt.beans.M1_MethodReplacer"></bean>
+		   
+  <bean id="m1_para_methodReplacer" 
+            class="com.dt.beans.M1_Param_MethodReplacer"></bean>		   
+
+
+	<bean id="reportGenerator" class="com.dt.beans.ReportGenerator">
+
+		<replaced-method name="generate"
+			replacer="methodRelacerclass">
+			<arg-type>java.lang.String</arg-type>
+			<arg-type>java.lang.String</arg-type>
+		</replaced-method>
+<!-- 
+		<replaced-method name="m1"
+			replacer="methodRelacerclass">
+			<arg-type>java.lang.String</arg-type>
+			<arg-type>java.lang.String</arg-type> 
+		</replaced-method>
+		
+		<replaced-method name="m1"
+			replacer="methodRelacerclass">
+		</replaced-method> -->
+		
+		
+		<replaced-method name="m1" replacer="m1_methodReplacer"></replaced-method>
+		
+		<replaced-method name="m1" replacer="m1_para_methodReplacer">
+		    <arg-type>java.lang.String</arg-type>
+			<arg-type>java.lang.String</arg-type> 
+		</replaced-method>
+		
+	</bean>
+
+
+	
+
+</beans>
+
+
+<!-- by using method replacer we can switch logic from one method to another 
+	method it will help in project when we write code for experimental purppose 
+	for that we have to write one new class and that should be implented from 
+	MethodReplacer(I) and override umimplemented method reimplement -->

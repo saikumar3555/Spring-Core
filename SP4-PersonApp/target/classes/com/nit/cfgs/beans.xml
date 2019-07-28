@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="student" class="com.nit.beans.Student">
+	<property name="studentName" value="apa"></property>
+	<property name="studentAge" value="23"></property>
+	<property name="studentId" value="219"></property>
+	
+	</bean>
+	
+	<bean id="player" class="com.nit.beans.Player">
+	<constructor-arg name="playerId" value="101"></constructor-arg>
+<!-- 	<constructor-arg name="playerName" value="saikumar"></constructor-arg>
+	<constructor-arg name="playerAge" value="23"> </constructor-arg>   -->
+	
+	</bean>
+
+
+</beans>

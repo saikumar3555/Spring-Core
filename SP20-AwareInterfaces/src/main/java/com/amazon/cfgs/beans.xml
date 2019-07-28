@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="order" class="com.amazon.beans.Order" 
+ p:orderId="101"
+ p:itemCode="IC-191"
+ p:itemQuantity="10"
+ p:price="12000"
+/>
+ 
+
+<bean id="address" class="com.amazon.beans.Address"
+ p:city="Hyd"
+ p:state="TG"
+ p:zip="500035"
+/>
+
+<bean id="blueCart" class="com.amazon.beans.BlueCartServiceImpl" scope="prototype"/>
+  <bean id="dtdc" class="com.amazon.beans.DtDcServiceImpl" scope="prototype"/>  
+
+<!-- Targer Bean Defnition -->
+<bean id="aos" class="com.amazon.beans.AmazonOrderService" 
+
+/>
+
+  <alias name="blueCart" alias="dtdc"/>
+
+</beans>

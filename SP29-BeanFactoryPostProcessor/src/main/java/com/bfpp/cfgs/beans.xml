@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- DriverManager bean -->
+<bean id="cm" class="com.bfpp.beans.ConnectionManager">
+ <property name="userName" value="${userName}"/>
+ <property name="password" value="${password}"/>
+ <property name="url" value="${url}"/>
+ <property name="driverClass" value="${driverClass}"/>
+</bean>
+
+<!-- EmailService Bean -->
+<bean id="es" class="com.bfpp.beans.EmailService">
+<property name="userAuth" value="${userAuth}"></property>
+<property name="pwdAuth" value="${pwdAuth}"></property>
+</bean>
+
+<!-- Pre defined class for BeanFactoryPostProcessor -->
+<bean name="pphc" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+<property name="locations">
+<list>
+<value>DriverManager.properties</value>
+<value>EmailService.properties</value>
+<value>lombok.properties</value>
+</list>
+
+</property>
+<property name="ignoreUnresolvablePlaceholders" value="true"></property>
+<property name="ignoreResourceNotFound" value="true"></property>
+
+</bean>
+
+</beans>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<bean id="factory" class="com.spring.beans.PrinterFactory"></bean>
+
+<bean id="pri" factory-bean="factory" factory-method="getPrinter"></bean>
+
+<bean id="atm" class="com.spring.beans.ATMTransaction">
+<property name="printer" ref="pri"></property>
+</bean>
+
+</beans>

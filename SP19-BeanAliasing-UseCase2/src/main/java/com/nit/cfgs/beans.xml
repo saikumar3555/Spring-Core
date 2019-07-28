@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- Dependent bean -->
+<bean id="poiService" class="com.nit.beans.ExcelGeneratorUsingPoiApi"></bean>
+
+<bean id="asposeService" class="com.nit.beans.ExcelGeneratorUsingAsposeApi"></bean>
+
+<bean id="repoGen" class="com.nit.beans.ReportGeneratorService">
+<property name="poiGenerator" ref="poiService"></property>
+</bean>
+
+<bean id="newRepoGen" class="com.nit.beans.NewReportGenerator">
+<property name="asposeGenerator" ref="asposeService"></property>
+</bean>
+
+<!-- This below one line makes the all the accurances of bean references od asposeService replaces by poiService -->
+ <!-- <alias name="poiService" alias="asposeService"/> -->
+
+</beans>

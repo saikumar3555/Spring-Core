@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="xml" class="com.adobe.beans.XmlFormattedMsg"></bean>
+<bean id="html" class="com.adobe.beans.HtmlMsgFormatter"></bean>
+
+<bean id="msgWriter" class="com.adobe.beans.MessageWriter">
+<constructor-arg name="formater" ref="xml"></constructor-arg>
+
+</bean>
+
+</beans>

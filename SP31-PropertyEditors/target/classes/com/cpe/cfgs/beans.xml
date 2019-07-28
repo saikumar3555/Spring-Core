@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--  predefined class for custom property editor Mandatory to Configure  -->
+
+	<bean id="cpe"
+		class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+
+		<property name="customEditors">
+			<map>
+				<entry key="com.cpe.beans.Number"
+					value="com.cpe.beans.NumberPropertyEditor"></entry>
+			</map>
+
+		</property>
+
+	</bean>
+
+
+
+	<!-- Taget class -->
+	<bean id="cal" class="com.cpe.beans.Calculator">
+		<property name="an" value="10,20"></property>
+	</bean>
+
+
+
+</beans>

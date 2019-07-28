@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="prgMeeting" class="com.tcs.beans.Meeting">
+	
+	<property name="meetingId" value="101"/>
+	<property name="meetingName" value="Prg Meeting"/>
+	<property name="meetingPurpose" value="about bugs in UAT"/>
+	<property name="participants">
+	<list>
+	<value>ravam</value>
+	<value>sravan</value>
+	<value>rohan</value>
+	</list>
+	</property>
+	</bean>
+	
+	<bean id="scrMeeting" class="com.tcs.beans.Meeting" parent="prgMeeting">
+	
+	<property name="meetingId" value="101"/>
+	<property name="meetingName" value="Scrum Meeting"/>
+	<property name="meetingPurpose" value="about Development Structure"/>
+	<property name="participants" >
+	<list merge="true">
+	<value>moksha</value>
+	<value>rohith</value>
+	<value>rohan</value>
+	</list>
+	</property>
+	</bean>
+
+
+</beans>

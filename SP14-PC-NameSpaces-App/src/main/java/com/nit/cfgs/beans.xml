@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- P and C namingspaces urls are added -->
+
+<!-- dependent address bean -->
+<bean id="address" class="com.nit.beans.Address" 
+c:city="HYD" 
+c:state="TG"
+c:country="INDIA"
+
+></bean>
+
+
+<!-- Target Contact bean -->
+<bean id="contact" class="com.nit.beans.Contact" 
+p:id="101"
+p:name="Saikumar apa"
+p:gmail="saiapa.gmail.com"
+p:address-ref="address"
+></bean>
+
+
+</beans>

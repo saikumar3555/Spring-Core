@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- Dependent bean  
+<bean id="chip" class="com.nit.beans.Chip">
+<property name="chipId" value="101"/>
+<property name="chipName" value="IE-11"/>
+</bean>   -->
+
+<!-- Target Bean -->
+<bean id="robot" class="com.nit.beans.Robot">
+<property name="robotId" value="1001"/>
+<property name="robotName" value="SECROBO-121"/>
+<property name="chip">
+
+<!-- Innerbean -->
+<bean class="com.nit.beans.Chip">
+<property name="chipId" value="101"/>
+<property name="chipName" value="IE-11"></property>
+</bean>
+</property>
+</bean>
+
+
+
+</beans>

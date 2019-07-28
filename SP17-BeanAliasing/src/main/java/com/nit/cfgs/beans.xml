@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="pEng" class="com.nit.beans.PetrolEngine"/>
+<bean id="dEng" class="com.nit.beans.DieselEngine"/>
+
+
+
+<!-- Bean alias names  -->
+<bean name="car,c2,c3 c4,c5" class="com.nit.beans.Car">
+
+
+<!-- <bean id="car,c2,c3 c4" class="com.nit.beans.Car"> -->
+
+<property name="eng"  ref="dEng"></property>
+</bean>
+<alias name="car" alias="c8,"/>
+
+</beans>

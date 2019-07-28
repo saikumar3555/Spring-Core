@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<!-- Dependent bean -->
+	<bean id="course" class="com.nit.beans.Course">
+		<constructor-arg name="courseId" value="101" />
+		<constructor-arg name="courseName" value="java" />
+		<constructor-arg name="courseFee" value="4000" />
+	</bean>
+
+
+	<!-- Target bean -->
+	<bean id="inst" class="com.nit.beans.Institute" autowire="byType">
+		<constructor-arg name="instituteId" value="451" />
+		<constructor-arg name="instituteName" value="NareshIt" />
+
+		<constructor-arg name="buildings">
+			<set>
+				<value>A1-Block</value>
+				<value>A2-Block</value>
+			</set>
+		</constructor-arg>
+		<constructor-arg name="faculty">
+			<set>
+				<value>Ashok</value>
+				<value>Nataraj</value>
+				<value>HK</value>
+			</set>
+		</constructor-arg>
+
+
+
+		<constructor-arg name="branches">
+			<set>
+				<value>HYD</value>
+				<value>CHENNAI</value>
+				<value>VIZAG</value>
+			</set>
+		</constructor-arg>
+		
+		
+		<!--  <constructor-arg name="course" ref="course"></constructor-arg>  -->
+
+	</bean>
+
+
+
+</beans>

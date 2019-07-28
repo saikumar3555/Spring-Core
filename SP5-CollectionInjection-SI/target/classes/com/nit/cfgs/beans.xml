@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="collegeDetails" class="com.nit.beans.CollegeDetails">
+		<property name="collegeId" value="1091" />
+		<property name="collegeName" value="GNITC"></property>
+		
+		<property name="collegeBranches">
+			<set value-type="java.lang.String">
+				<value>ECE</value>
+				<value>CSE</value>
+				<value>MECH</value>
+				<value>CIVIL</value>
+				<value>IT</value>
+				<value>AERO</value>
+			</set>
+		
+		</property>
+		<property name="collegeFaculty">
+		<list >
+		<value>BHARGAV</value>
+		<value>SANDEEP</value>
+		<value>RAJESH</value>
+		<value>MURALI</value>
+		</list>
+		</property>  
+		
+		
+		<property name="studentInfo">
+		<map key-type="java.lang.Integer" value-type="java.lang.String">
+		<entry key="1" value="Saikumar"></entry>
+		<entry key="2" value="Durga"></entry>
+		
+		
+		</map>
+		</property>
+		<property name="emails">
+		<props>
+		<prop key="personal">saikumar3555@gmail.com</prop>
+		<prop key="Office">amazon.sai@gmail.com</prop>
+		</props>
+		</property>
+		
+	</bean>
+
+</beans> 

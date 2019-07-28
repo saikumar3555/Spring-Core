@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="baseCar" class="com.maruthi.beans.Car">
+<property name="carName" value="Suzuki"/>
+<property name="carPrice" value="850000"/>
+<property name="colour" value="red"/>
+</bean>
+
+<bean id="c1" class="com.maruthi.beans.Car" parent="baseCar">
+<property name="carId" value="101"/>
+<property name="carRegistration" value="Ap21 1111"/>
+</bean>
+
+<bean id="c2" class="com.maruthi.beans.Car" parent="baseCar">
+<property name="carId" value="102"/>
+<property name="carRegistration" value="Ap21 2222"/>
+</bean>
+
+
+
+</beans>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<!--  dependent bean 1 -->
+<bean id="present" class="com.nit.beans.Address" >
+<property name="city" value="Hyd"/>
+<property name="state" value="TG"/>
+<property name="country" value="India"></property>
+
+</bean >
+
+<!--  dependent bean 2 -->
+<bean id="permanent" class="com.nit.beans.Address" primary="true">
+<property name="city" value="BNGLR" />
+<property name="state" value="KA"/>
+<property name="country" value="INDIA"></property>
+
+</bean>
+
+<bean id="person" class="com.nit.beans.Person" autowire="byType">
+<property name="personId" value="101"/>
+<property name="personName" value="Saikumar Apa"/>
+<property name="personGmail" value="SAikumar@Gmail.com"/>
+<!-- <property name="presentAddress" ref="present"/>
+<property name="permanentAddress" ref="permanent"/> -->
+</bean>
+
+</beans>

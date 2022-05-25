@@ -44,6 +44,6 @@
 		<finalName>MVCProj1-FirstApp</finalName>
 	</build>
 	<properties>
-		<spring-version>3.2.8.RELEASE</spring-version>
+		<spring-version>5.2.22.RELEASE</spring-version>
 	</properties>
 </project>
